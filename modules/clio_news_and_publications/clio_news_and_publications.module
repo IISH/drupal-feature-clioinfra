@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the News and publications feature.
+ */
+
+include_once 'clio_news_and_publications.features.inc';

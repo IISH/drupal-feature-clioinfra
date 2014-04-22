@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Menus and blocks feature.
+ */
+
+include_once 'clio_menus_and_blocks.features.inc';

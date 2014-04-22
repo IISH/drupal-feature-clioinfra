@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ *
+ */
+function clio_site_menu() {
+  $items['home'] = array(
+    'title' => 'Clio Infra',
+    'page callback' => 'clio_site_home',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+
+/*
+ * A completely empty home page, suitable to add blocks.
+ */
+function clio_site_home() {
+  return '';
+}
+

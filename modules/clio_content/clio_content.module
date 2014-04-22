@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Content: news, publications and slideshows feature.
+ */
+
+include_once 'clio_content.features.inc';
