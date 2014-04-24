@@ -1,0 +1,185 @@
+<?php
+/**
+ * @file
+ * Clio Infra blocks for the front page that need fixed machine names.
+ */
+
+
+/**
+ * Implements hook_block_info().
+ *
+ */
+function clio_blocks_block_info() {
+
+  $blocks['visualize'] = array(
+    'info' => t('Clio Infra: Visualize'),
+    'status' => TRUE,
+    'theme' => 'clioinfra',
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['partners'] = array(
+    'info' => t('Clio Infra: Partners'),
+    'status' => TRUE,
+    'theme' => 'clioinfra',
+    'region' => 'partners',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['address'] = array(
+    'info' => t('Clio Infra: Address'),
+    'status' => TRUE,
+    'weight' => 1,
+    'theme' => 'clioinfra',
+    'region' => 'footer',
+  );
+
+  $blocks['correspondence'] = array(
+    'info' => t('Clio Infra: Correspondence address'),
+    'status' => TRUE,
+    'weight' => 2,
+    'theme' => 'clioinfra',
+    'region' => 'footer',
+  );
+
+  $blocks['telephone'] = array(
+    'info' => t('Clio Infra: Telephone'),
+    'status' => TRUE,
+    'weight' => 3,
+    'theme' => 'clioinfra',
+    'region' => 'footer',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function clio_blocks_block_configure($delta = '') {
+
+  // TODO Use text_format with filtered_html instead of textarea for better security.
+  $form = array();
+  if ($delta == 'address') {
+    $form['clio_blocks_address'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Block contents'),
+      '#description' => t('This text will appear in the block.'),
+      '#default_value' => variable_get('clio_blocks_address', 'Cruquiusweg 31<br>
+1019 AT Amsterdam<br>
+The Netherlands'),
+    );
+  }
+  if ($delta == 'correspondence') {
+    $form['clio_blocks_correspondence'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Block contents'),
+      '#description' => t('This text will appear in the block.'),
+      '#default_value' => variable_get('clio_blocks_correspondence', 'Correspondence address:<br>
+P.O. Box 2169<br>
+1000 CD  Amsterdam<br>
+The Netherlands'),
+    );
+  }
+  if ($delta == 'telephone') {
+    $form['clio_blocks_telephone'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Block contents'),
+      '#description' => t('This text will appear in the block.'),
+      '#default_value' => variable_get('clio_blocks_telephone', 'tel + 31 20 6685866<br>
+fax + 31 20 6654181<br>
+e-mail: clioinfra@iisg.nl'),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ */
+function clio_blocks_block_save($delta = '', $edit = array()) {
+  if ($delta == 'address') {
+    variable_set('clio_blocks_address', $edit['clio_blocks_address']);
+  }
+  if ($delta == 'correspondence') {
+    variable_set('clio_blocks_correspondence', $edit['clio_blocks_correspondence']);
+  }
+  if ($delta == 'telephone') {
+    variable_set('clio_blocks_telephone', $edit['clio_blocks_telephone']);
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function clio_blocks_block_view($delta = '') {
+  switch ($delta) {
+    case 'visualize':
+      $block['subject'] = t('Visualize our datasets');
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+
+    case 'partners':
+      $block['subject'] = t('Partners');
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+
+    case 'address':
+      $block['subject'] = '';
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+
+    case 'correspondence':
+      $block['subject'] = '';
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+
+    case 'telephone':
+      $block['subject'] = '';
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * A module-defined block content function.
+ */
+function clio_blocks_contents($which_block) {
+  switch ($which_block) {
+    case 'partners':
+      return '<div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-iisg-40.png"></div>
+<div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-rug-40.png"></div>
+<div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-uu-40.png"></div>
+<div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-uni-tuebingen-40.png"></div>
+<div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-dans-40.png"></div>
+';
+
+    case 'visualize':
+      return '<a href="/visualize"><img src="/sites/all/themes/clioinfra/images/visualize2.png"></a>';
+
+    case 'address':
+      return variable_get('clio_blocks_address', 'Cruquiusweg 31<br>
+1019 AT Amsterdam<br>
+The Netherlands');
+
+    case 'correspondence':
+      return variable_get('clio_blocks_correspondence', 'Correspondence address:<br>
+P.O. Box 2169<br>
+1000 CD  Amsterdam<br>
+The Netherlands');
+
+    case 'telephone':
+      return variable_get('clio_blocks_telephone', 'tel + 31 20 6685866<br>
+fax + 31 20 6654181<br>
+e-mail: clioinfra@iisg.nl');
+
+  }
+}
+
+
+

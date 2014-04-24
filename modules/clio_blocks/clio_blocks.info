@@ -1,0 +1,7 @@
+name = Clio Blocks
+description = Blocks for the Clio Infra front page that need fixed machine names.
+package = Clio Infra Site
+core = 7.x
+dependencies[] = block
+version = 7.x-1.0
+
