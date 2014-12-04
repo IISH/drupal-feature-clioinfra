@@ -4,3 +4,10 @@ core = 7.x
 package = Clio Infra Site
 version = 7.x-1.0
 
+dependencies[] = menu_trail_by_path
+dependencies[] = fontyourface
+dependencies[] = google_fonts_api
+;dependencies[] = google_analytics
+
+
+

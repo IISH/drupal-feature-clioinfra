@@ -32,3 +32,4 @@ features[variable][] = node_submitted_publication
 features[views_view][] = news
 features[views_view][] = publications
 features_exclude[field_base][body] = body
+features_exclude[dependencies][dkan_dataset_content_types] = dkan_dataset_content_types
