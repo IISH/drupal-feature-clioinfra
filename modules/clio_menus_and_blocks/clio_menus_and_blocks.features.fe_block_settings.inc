@@ -255,7 +255,7 @@ function clio_menus_and_blocks_default_fe_block_settings() {
         'region' => 'header',
         'status' => 1,
         'theme' => 'clioinfra',
-        'weight' => 0,
+        'weight' => -17,
       ),
       'seven' => array(
         'region' => '',
@@ -264,7 +264,7 @@ function clio_menus_and_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
