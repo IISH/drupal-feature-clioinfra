@@ -300,6 +300,38 @@ function clio_menus_and_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['shortcut-shortcuts'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'shortcuts',
+    'module' => 'shortcut',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'clioinfra' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'clioinfra',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-news-block'] = array(
     'cache' => -1,
     'custom' => 0,
