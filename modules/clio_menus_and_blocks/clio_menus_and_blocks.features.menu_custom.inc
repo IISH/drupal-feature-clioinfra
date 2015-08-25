@@ -16,12 +16,6 @@ function clio_menus_and_blocks_menu_default_menu_custom() {
     'title' => 'Main menu',
     'description' => 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.',
   );
-  // Exported menu: menu-explore-discover.
-  $menus['menu-explore-discover'] = array(
-    'menu_name' => 'menu-explore-discover',
-    'title' => 'Explore & discover',
-    'description' => '',
-  );
   // Exported menu: menu-footer-menu.
   $menus['menu-footer-menu'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -42,7 +36,6 @@ function clio_menus_and_blocks_menu_default_menu_custom() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Explore & discover');
   t('Footer menu');
   t('Login');
   t('Main menu');

@@ -11,8 +11,17 @@
  */
 function clio_blocks_block_info() {
 
-  $blocks['visualize'] = array(
-    'info' => t('Clio Infra: Visualize'),
+  $blocks['download'] = array(
+    'info' => t('Clio Infra: Download'),
+    'status' => TRUE,
+    'theme' => 'clioinfra',
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['analyze'] = array(
+    'info' => t('Clio Infra: Analyze'),
     'status' => TRUE,
     'theme' => 'clioinfra',
     'region' => 'content',
@@ -118,8 +127,13 @@ function clio_blocks_block_save($delta = '', $edit = array()) {
  */
 function clio_blocks_block_view($delta = '') {
   switch ($delta) {
-    case 'visualize':
-      $block['subject'] = t('Visualize our datasets');
+    case 'download':
+      $block['subject'] = t('Download our datasets');
+      $block['content'] = clio_blocks_contents($delta);
+      break;
+
+    case 'analyze':
+      $block['subject'] = t('Analyze our datasets');
       $block['content'] = clio_blocks_contents($delta);
       break;
 
@@ -159,8 +173,15 @@ function clio_blocks_contents($which_block) {
 <div class="sponsorlogo"><img src="/sites/all/themes/clioinfra/images/logo-dans-40.png"></div>
 ';
 
-    case 'visualize':
-      return '<a href="/visualize"><img src="/sites/all/themes/clioinfra/images/visualize2.png"></a>';
+    case 'download':
+      return '<div class="datasets-button"><a href="/datasets"><div class="datasets-label">Search our datasets</div>
+<div class="datasets-img"><img src="/sites/all/themes/clioinfra/images/datasets.png"></div></a></div>';
+
+    case 'analyze':
+      return '<div class="analyze-button button-first"><a href="/analyze/default/maps"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
+<div class="analyze-button"><a href="/analyze/default/graphs"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/graphs.png"></div><div class="analyze-label">Graphs</div></a></div>
+<div class="analyze-button button-last"><a href="/analyze/default/stats"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/stats.png"></div><div class="analyze-label">Statistics</div></a></div>
+';
 
     case 'address':
       return variable_get('clio_blocks_address', 'Cruquiusweg 31<br>

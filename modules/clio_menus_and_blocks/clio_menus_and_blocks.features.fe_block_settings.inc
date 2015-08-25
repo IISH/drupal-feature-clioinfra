@@ -44,6 +44,38 @@ function clio_menus_and_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['clio_blocks-analyze'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'analyze',
+    'module' => 'clio_blocks',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'clioinfra' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'clioinfra',
+        'weight' => -15,
+      ),
+      'seven' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   $export['clio_blocks-correspondence'] = array(
     'cache' => 1,
     'custom' => 0,
@@ -74,6 +106,38 @@ function clio_menus_and_blocks_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => 0,
+  );
+
+  $export['clio_blocks-download'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'download',
+    'module' => 'clio_blocks',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'clioinfra' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'clioinfra',
+        'weight' => -16,
+      ),
+      'seven' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
   );
 
   $export['clio_blocks-partners'] = array(
@@ -138,70 +202,6 @@ function clio_menus_and_blocks_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => 0,
-  );
-
-  $export['clio_blocks-visualize'] = array(
-    'cache' => 1,
-    'custom' => 0,
-    'delta' => 'visualize',
-    'module' => 'clio_blocks',
-    'node_types' => array(),
-    'pages' => '<front>',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 1,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'clioinfra' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'clioinfra',
-        'weight' => -15,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 1,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
-  $export['menu-menu-explore-discover'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-explore-discover',
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '<front>',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'clioinfra' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'clioinfra',
-        'weight' => -16,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Explore & discover our datasets',
-    'visibility' => 1,
   );
 
   $export['menu-menu-footer-menu'] = array(
