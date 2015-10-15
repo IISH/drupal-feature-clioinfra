@@ -178,9 +178,9 @@ function clio_blocks_contents($which_block) {
 <div class="datasets-img"><img src="/sites/all/themes/clioinfra/images/datasets.png"></div><div class="datasets-label">Download</div></a></div>';
 
     case 'analyze':
-      return '<div class="analyze-button button-first"><a href="/analyze/default/maps"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
-<div class="analyze-button"><a href="/analyze/default/graphs"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/graphs.png"></div><div class="analyze-label">Graphs</div></a></div>
-<div class="analyze-button button-last"><a href="/analyze/default/stats"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/stats.png"></div><div class="analyze-label">Statistics</div></a></div>
+      return '<div class="analyze-button button-first"><a href="/analyze/maps"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
+<div class="analyze-button"><a href="/analyze/graphs"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/graphs.png"></div><div class="analyze-label">Graphs</div></a></div>
+<div class="analyze-button button-last"><a href="/analyze/stats"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/stats.png"></div><div class="analyze-label">Statistics</div></a></div>
 ';
 
     case 'address':
