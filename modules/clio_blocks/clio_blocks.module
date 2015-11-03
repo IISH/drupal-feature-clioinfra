@@ -128,12 +128,12 @@ function clio_blocks_block_save($delta = '', $edit = array()) {
 function clio_blocks_block_view($delta = '') {
   switch ($delta) {
     case 'download':
-      $block['subject'] = t('Download our datasets');
+      $block['subject'] = t('Download datasets');
       $block['content'] = clio_blocks_contents($delta);
       break;
 
     case 'analyze':
-      $block['subject'] = t('Analyze our datasets');
+      $block['subject'] = t('Analyze datasets');
       $block['content'] = clio_blocks_contents($delta);
       break;
 
@@ -174,13 +174,14 @@ function clio_blocks_contents($which_block) {
 ';
 
     case 'download':
-      return '<div class="datasets-button"><a href="/datasets"><div class="datasets-text"><h3>Search our datasets</h3>Search for datasets and download them as <br>panel data or individual files</div>
+      return '<div class="datasets-button"><a href="/datasets"><div class="datasets-text">' .
+       t('<h3>Search datasets</h3>Search for datasets and download them as <br>panel data or individual files') . '</div>
 <div class="datasets-img"><img src="/sites/all/themes/clioinfra/images/datasets.png"></div><div class="datasets-label">Download</div></a></div>';
 
     case 'analyze':
-      return '<div class="analyze-button button-first"><a href="/analyze/maps"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
-<div class="analyze-button"><a href="/analyze/graphs"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/graphs.png"></div><div class="analyze-label">Graphs</div></a></div>
-<div class="analyze-button button-last"><a href="/analyze/stats"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/stats.png"></div><div class="analyze-label">Statistics</div></a></div>
+      return '<div class="analyze-button button-first"><a href="/analyze/maps?dataset=latest"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
+<div class="analyze-button"><a href="/analyze/graphs?dataset=latest"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/graphs.png"></div><div class="analyze-label">Graphs</div></a></div>
+<div class="analyze-button button-last"><a href="/analyze/stats?dataset=latest"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/stats.png"></div><div class="analyze-label">Statistics</div></a></div>
 ';
 
     case 'address':
