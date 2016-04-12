@@ -174,9 +174,17 @@ function clio_blocks_contents($which_block) {
 ';
 
     case 'download':
-      return '<div class="datasets-button"><a href="/datasets"><div class="datasets-text">' .
-       t('<h3>Search datasets</h3>Search for datasets and download them as <br>panel data or individual files') . '</div>
-<div class="datasets-img"><img src="/sites/all/themes/clioinfra/images/datasets.png"></div><div class="datasets-label">Download</div></a></div>';
+      return '<div style="width:480px;height:100px;">
+<div style="width:140px;float:left;">
+<h3>Search datasets</h3>Browse and select datasets as panel data or individual files  
+</div>
+<div style="width:110px;float:right;margin-left:60px;margin-top:5px">
+        <a href="/datasets"><img src="/sites/all/themes/clioinfra/images/datasets.png"><div class="datasets-label">Select</div></div></a>
+<div style="width:110px;float:right;margin-top:6px">
+	<a href="/datasets/indicators"><img src="/sites/all/themes/clioinfra/images/browsebutton.jpg"><div class="datasets-label">Browse</div></a>
+</div>
+</div>
+';
 
     case 'analyze':
       return '<div class="analyze-button button-first"><a href="/analyze/maps?dataset=latest"><div class="analyze-img"><img src="/sites/all/themes/clioinfra/images/maps.png"></div><div class="analyze-label">Maps</div></a></div>
