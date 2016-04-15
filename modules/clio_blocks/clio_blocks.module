@@ -179,9 +179,12 @@ function clio_blocks_contents($which_block) {
 <h3>Search datasets</h3>Browse and select datasets as panel data or individual files  
 </div>
 <div style="width:110px;float:right;margin-left:60px;margin-top:5px">
-        <a href="/datasets"><img src="/sites/all/themes/clioinfra/images/datasets.png"><div class="datasets-label">Select</div></div></a>
-<div style="width:110px;float:right;margin-top:6px">
-	<a href="/datasets/indicators"><img src="/sites/all/themes/clioinfra/images/browsebutton.jpg"><div class="datasets-label">Browse</div></a>
+        <a href="/datasets"><img src="/sites/all/themes/clioinfra/images/datasets.png"><div class="datasets-label">Select</div>
+	</a>
+</div>
+<div style="width:110px;float:right;margin-top:5px">
+	<a href="/datasets/indicators"><img src="/sites/all/themes/clioinfra/images/browsebutton.jpg"><div class="datasets-label">Browse</div>
+	</a>
 </div>
 </div>
 ';
